@@ -16,6 +16,13 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                polyOverlay.Dispose();
+                polyOverlay = null;
+                if (z != null)
+                {
+                    z.Dispose();
+                    z = null;
+                }
             }
             base.Dispose(disposing);
         }

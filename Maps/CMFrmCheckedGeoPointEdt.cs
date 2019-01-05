@@ -18,7 +18,7 @@ namespace Maps
 
         private CMCheckedGeoPoint mCheckedGeoPoint;
         private CMAirPortInfo mAPInf ;//= new CMAirPortInfo();
-        public bool DialogResult = false;
+        public bool Dialog_Result = false;
 
         public CMFrmCheckedGeoPointEdt()
         {
@@ -147,7 +147,7 @@ namespace Maps
             SaveData1();
             SaveData2();
 
-            DialogResult = true;
+            Dialog_Result = true;
             this.Close();
             
         }

@@ -599,7 +599,7 @@ namespace Maps
 
             mform.ShowDialog();
 
-            if (mform.DialogResult)
+            if (mform.Dialog_Result)
                 StartCheck(mform.CheckedGeoPoint);
         }
         
@@ -609,7 +609,7 @@ namespace Maps
             
             mform.ShowDialog();
 
-            if (mform.DialogResult)
+            if (mform.Dialog_Result)
                 StartCheck(mform.CheckedGeoPoint);
         }
 
@@ -618,7 +618,7 @@ namespace Maps
             CMFrmCheckedGeoPointEdt mform = new CMFrmCheckedGeoPointEdt(APInf,geodottype, APInf.KTA.Lat, APInf.KTA.Lng, APInf.AirfieldHeight);
             mform.ShowDialog();
 
-            if (mform.DialogResult)
+            if (mform.Dialog_Result)
                 StartCheck(mform.CheckedGeoPoint);
         }
 
@@ -809,9 +809,11 @@ namespace Maps
             }
 
 
-            GMapPolygon GMapSurfaceAPoligon = new GMapPolygon(mPointsList, "Ellipse");
-            GMapSurfaceAPoligon.Fill = new SolidBrush(Color.FromArgb(3, Color.Black));
-            GMapSurfaceAPoligon.Stroke = new Pen(Color.Black, 1);
+            GMapPolygon GMapSurfaceAPoligon = new GMapPolygon(mPointsList, "Ellipse")
+            {
+                Fill = new SolidBrush(Color.FromArgb(3, Color.Black)),
+                Stroke = new Pen(Color.Black, 1)
+            };
             polyOverlay.Polygons.Add(GMapSurfaceAPoligon);
 
         }
@@ -984,6 +986,7 @@ namespace Maps
 
                     sr.Close();
                     FS.Close();
+                    FS = null;
 
                 }
             
